@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'planner',
     'recipes',
     'api',
+    'budget_meals.apps.BudgetMealsConfig',
 ]
 
 MIDDLEWARE = [
