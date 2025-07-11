@@ -20,6 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import csrf_views
 from .test_views import CORSTestView, MediaTestView
+from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +36,7 @@ urlpatterns = [
     path('api/planner/', include('planner.urls')),
     path('api/recipes/', include('recipes.urls')),
     path('api/', include('api.urls')),
+    path('', views.budget_meal_home, name='budget_meals_home'),
+    path('api/suggest/', views.suggest_meals, name='suggest_meals'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
